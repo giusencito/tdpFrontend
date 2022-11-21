@@ -1,0 +1,72 @@
+
+
+
+<mat-card>
+<mat-card-title>Crear preferencia de Usuario</mat-card-title>
+<form [formGroup]="loginform">
+  <div >
+    <mat-form-field appearance="fill" class="fors">
+      <mat-label>Select Team</mat-label>
+      <mat-select [(ngModel)]="name" formControlName="team" >
+        <mat-option *ngFor="let team of teams" [value]="team.name">
+             {{team.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+
+</form>
+<div>
+  <mat-slider
+  class="fors"
+color="warn"
+thumbLabel
+[displayWith]="formatLabel"
+(click)="new_rate(value)"
+[(ngModel)]="value"
+tickInterval="1000"
+step="0.1"
+min="0"
+max="5"
+aria-label="units"></mat-slider>
+
+</div>
+
+<button mat-raised-button  class="fors" (click)="Submit()">
+ Submit
+</button>
+
+
+</mat-card>
+<mat-card>
+  <mat-card-title>Preferencias del Usuario</mat-card-title>
+  <div *ngFor="let element of dataSource.data">
+    <div>
+      <p>{{element.name}}</p>  
+      <button mat-raised-button (click)="Delete(element.name,1)"><mat-icon>delete</mat-icon></button>
+    </div>
+       
+
+  </div>
+
+
+
+
+</mat-card>
+<mat-card>
+
+<button mat-raised-button class="fors">Hacer la Recomendacion</button>
+</mat-card>
+<mat-card>
+  <mat-card-title>Recomendaciones</mat-card-title>
+
+
+
+
+
+
+
+
+</mat-card>
