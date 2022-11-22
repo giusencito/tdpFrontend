@@ -8,7 +8,7 @@ import {catchError, retry} from "rxjs/operators";
 })
 export class PreferencesService {
 
-  basePath = '';
+  basePath = 'https://web-production-9edb.up.railway.app'; //     http://127.0.0.1:8000
 
   httpOptions = {
     headers: new HttpHeaders({

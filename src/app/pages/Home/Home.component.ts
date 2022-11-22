@@ -118,7 +118,7 @@ export class HomeComponent implements OnInit {
     return value;
   }
   new_rate( aId: number){
-   
+    
     this.rating=aId
     
   }
@@ -128,6 +128,8 @@ export class HomeComponent implements OnInit {
     this.UserPreference.rating=this.rating
     console.log(this.dataSource.data)
     console.log("añadir")
+    console.log(this.UserPreference)
+
     this.addElement(this.UserPreference)
    
   
@@ -135,7 +137,7 @@ export class HomeComponent implements OnInit {
   addElement(user:UserPreference){
    
     this.PreferencesService.post_user_preference(user).subscribe((response:any)=>{
-      this.dataSource.data.push(...response);
+      this.dataSource.data.push(response);
       this.dataSource.data = this.dataSource.data.map((o: any) => { return o; });
     })
   }
