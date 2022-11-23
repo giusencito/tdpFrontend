@@ -1,15 +1,16 @@
 
 <div class="back">
 
-
+  <div style="padding-bottom: 40px;"></div>
   <div class="main-div">
   <mat-card class="card">
    
     <mat-card-title>Crear preferencia de Usuario</mat-card-title>
+    <div style="padding-bottom: 20px;"></div>
     <form [formGroup]="loginform">
       <div >
         <mat-form-field appearance="fill" class="fors">
-          <mat-label>Select El equipo</mat-label>
+          <mat-label>Selecciona el equipo de su preferencia</mat-label>
           <mat-select [(ngModel)]="name" formControlName="team" >
             <mat-option *ngFor="let team of teams" [value]="team.name">
                  {{team.name}}
@@ -21,6 +22,8 @@
     
     
     </form>
+    <br>
+    <h1 style="font-weight: 500;">Seleccione la calificación de su equipo</h1>
     <div>
       <mat-slider
       class="fors"
@@ -37,7 +40,7 @@
     
     </div>
     
-    <button mat-raised-button  class="fors" (click)="Submit()" [disabled]="name==undefined">
+    <button mat-raised-button  color="primary" class="fors" (click)="Submit()" [disabled]="name==undefined">
      Submit
     </button>
   
@@ -45,20 +48,22 @@
   </mat-card>
 </div>
 
+<div style="padding-bottom: 40px;"></div>
 
 
 
 
-
-<div >
+<div style="padding-left: 220px;">
 
   <mat-card class="card">
     <mat-card-title>Preferencias del Usuario</mat-card-title>
+    <div style="padding-bottom: 20px;"></div>
     <div *ngFor="let element of dataSource.data" class="array">
      
 
       <div class="cell">
-       <p>{{element.name}} </p>
+       <div mat-card-avatar class="example-header-image"></div>
+       <p>Equipo: {{element.name}} </p>
           
         <button mat-raised-button (click)="Delete(element.name,1)" color="warn"><mat-icon>delete</mat-icon></button>
       </div>
@@ -78,7 +83,7 @@
 
 </div>
     
-<div class="second-div">
+<div class="second-div" style="padding-left: 220px;">
 <mat-card class="card">
   
   <button mat-raised-button class="fors" (click)="Addrecommendation()" color="primary" [disabled]="dataSource.data.length==0">Hacer la Recomendacion</button>
@@ -87,9 +92,10 @@
 
 
 
-<div >
+<div style="padding-left: 220px;">
     <mat-card class="card">
       <mat-card-title>Recomendaciones</mat-card-title>
+      <div style="padding-bottom: 20px;"></div>
       <mat-card-content>
       <div *ngFor="let element of Recommendation.content">
         <mat-card-header class="tocell">
