@@ -1,3 +1,51 @@
 .fors{
     width:100%;
 }
+.back{
+
+
+background-image: url("back.png");
+height:200%; 
+background-position: center;
+background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.card{
+    width: 80%;
+    justify-content: center;
+   
+
+
+
+}
+.main-div{
+    height: 40vh;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .second-div{
+    height: 30vh;
+   
+  }
+
+
+
+  .cell{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+  .array{
+    padding-bottom: 5px;
+  }
+  .example-header-image {
+    background-image: url('ball.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .tocell{
+    padding-bottom: 5px;
+  }
